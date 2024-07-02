@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ks.sb_project.repository.MemberMapper">
+
+	<select id="selectComments" resultType="com.ks.sb_project.dto.Store">
+		SELECT DISTINCT s.id, s.storename, s.business
+		FROM comments c
+				 JOIN member m ON c.member_id = m.memberno
+				 JOIN store s ON s.id = c.id
+		WHERE m.memberno = #{memberno}
+
+	</select>
+
+	<select id="selectLikes" resultType="com.ks.sb_project.dto.Store">
+		select DISTINCT s.id, s.storename, s.business
+		from likes l
+				 join store s on l.store_id = s.id
+				 join member m ON m.memberno = l.member_id
+		WHERE m.memberno = #{memberno}
+
+	</select>
+
+
+</mapper>

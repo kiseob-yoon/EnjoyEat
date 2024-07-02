@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ks.sb_project.repository.LoginMapper">
+	<select id="selectCount" resultType="Integer">
+		select count(*) from member
+	</select>
+
+
+	<select id="selectForLogin" resultType="com.ks.sb_project.dto.Member">
+		<![CDATA[
+		    SELECT * FROM member
+    		WHERE id = #{id} AND pw = #{pw} and delete_yn = 'N'
+		
+		]]>
+	</select>
+	
+	<select id="LoginConfirm" parameterType="map" resultType="boolean">
+		<![CDATA[
+    		SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END
+    		FROM member
+    		WHERE id = #{id} AND pw = #{pw} and delete_yn = 'N'
+		
+		]]>
+	</select>
+
+	<select id="selectById" resultType="com.ks.sb_project.dto.Member">
+	<![CDATA[
+			SELECT * FROM member
+			where id = #{id} and delete_yn = 'N'	 
+	]]>
+	</select>
+	
+	<insert id="memberJoin" parameterType="com.ks.sb_project.dto.Member">
+		<![CDATA[
+			INSERT INTO member
+			(
+				id,
+				pw,
+				name
+				
+			) 
+			VALUES 
+			(
+				#{id}, 
+				#{pw},
+				#{name}
+				
+			)
+		
+		]]>
+	</insert>
+	
+	<update id="memberUpdate" parameterType="com.ks.sb_project.dto.Member">
+		<![CDATA[
+			update member set
+			id = #{id},
+			pw = #{pw},
+			name = #{name}
+			where memberno = #{memberno}
+		]]>
+	</update>
+	
+	<delete id="memberDelete" parameterType="int">
+			<![CDATA[
+			update member set
+			delete_yn = 'Y'
+			where memberno = #{memberno}
+			]]>
+	</delete>
+
+
+
+
+
+
+
+</mapper>

@@ -1,0 +1,480 @@
+/* 전체 페이지 스타일 */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* 상단 바 스타일 */
+#WrapTop {
+	top: 0;
+	width: 100%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px 30px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.header .logo img {
+	width: 100px;
+	height: auto;
+}
+
+.header .login {
+	margin-left: auto;
+}
+
+.header .login a {
+	margin-right: 10px;
+}
+
+/* 로고 이미지와 텍스트를 감싸는 a태그 스타일 */
+a.enjoyEat-logo {
+    display: flex; /* 요소를 가로로 배치 */
+    align-items: center; /* 요소들을 세로 중앙으로 정렬 */
+    text-decoration: none; /* 밑줄 없애기 */
+    color: black; /* 글자 색상 */
+}
+
+/* 홈페이지 명인 EnjoyEat의 스타일 */
+.enjoyEat-text {
+    font-size: 24px; /* 글자 크기 */
+    font-weight: bold; /* 글자 두께 */
+    margin-left: 10px; /* 이미지와 텍스트 사이의 간격 */
+    font-family: 'Arial', sans-serif; /* 글꼴 */
+    color: #007bff; /* 글자 색상, 여기서는 파란색 사용 */
+    text-shadow: 1px 1px 2px gray; /* 글자에 그림자 추가 */
+}
+
+/* 이미지 스타일 */
+.enjoyEat-logo img {
+    width: 150px;
+    height: 150px;
+}
+
+
+/* 네비게이션 메뉴 스타일 */
+.navi {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navi li {
+	margin-right: 10px;
+}
+
+.navi li a {
+	display: block;
+	text-decoration: none;
+	color: #333;
+}
+
+.navi li a img {
+	width: 50px;
+	height: auto;
+}
+
+
+
+.storeName-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white; /* 배경색 추가 */
+    position: absolute; /* 절대 위치 */
+    right: 0; /* 오른쪽 정렬 */
+    z-index: 1000; /* 다른 요소보다 상위 레이어 */
+}
+
+/* 메뉴 항목 스타일 */
+.menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+/* 가게 정보 스타일 */
+    .store {
+        text-align: center; /* 텍스트 가운데 정렬 */
+        padding: 20px; /* 위아래 여백 추가 */
+        border-radius: 10px; /* 모서리를 둥글게 만듦 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    }
+
+.store .ranking {
+	margin-right: 20px;
+}
+
+.store .ranking strong {
+	font-weight: bold;
+}
+
+.store .storeName {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.mainArea {
+	margin-top: 20px; /* 원하는 만큼의 상단 여백 설정 */
+}
+
+.WrapMain {
+	position: relative;
+	top: 75px;
+	left: 0;
+	z-index: 100;
+}
+
+.WrapMain {
+	clear: both;
+	width: 980px;
+	text-align: left;
+	margin: 0 auto;
+}
+
+div {
+	display: block;
+	unicode-bidi: isolate;
+}
+
+body {
+	height: 100%;
+	font-family: Dotum, 돋움;
+	font-size: 12px;
+	color: rgb(75, 75, 75);
+	margin: 0px;
+	padding: 0px;
+}
+
+.areaThumbnail {
+	float: left;
+	margin-right: 20px; /* 썸네일과 기본 정보 사이의 간격 조정 */
+}
+
+.WrapMain .areaThumbnail img {
+	width: 500px; /* 가로 너비를 500px로 고정 */
+	height: 380px; /* 세로 너비를 380px로 고정 */
+}
+.areaBasic {
+	position: relative;
+	float: right;
+	width: 440px;
+	margin: 20px 0 0px 0;
+	display: flex; /* 요소를 행으로 표시 */
+	flex-wrap: wrap; /* 필요한 경우 요소를 여러 줄에 걸쳐 표시 */
+	align-items: flex-start; /* 수직 맞춤을 시작점으로 설정 */
+	z-index: 20;
+}
+
+.section {
+	display: flex;
+	flex-direction: column; /* 섹션 내부 요소를 세로로 배치 */
+	margin-bottom: 10px; /* 섹션 간격 설정 */
+	width:450px;
+}
+
+dl {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px; /* 각 dl 요소의 하단 여백 조절 */
+}
+
+.areaBasic .restName .name {
+	width: 355px;
+	font: bold 150% 'Dotum';
+}
+
+.areaBasic dl dd {
+	float: right;
+	letter-spacing: 0px;
+	color: #4b4b4b;
+}
+
+.areaBasic dl {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.areaBasic dd {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0; /* dd의 기본 마진 제거 */
+}
+
+.areaBasic dl {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.areaBasic dt {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-right: 10px; /* dt와 dd 사이의 간격 설정 */
+}
+
+.areaBasic dd.name {
+	font-weight: bold;
+	margin: -7px 5px 5px 20px; /* 기본 마진 제거 */
+}
+
+.areaBasic dd.type {
+	font-weight: bold;
+	margin: -7px 5px 5px 32px; /* 기본 마진 제거 */
+}
+
+.areaBasic dd.tell {
+	font-weight: bold;
+	margin: -7px 5px 5px 7px; /* 기본 마진 제거 */
+}
+
+.areaBasic dd.add1 {
+	font-weight: bold;
+	margin: -7px 5px 5px 32px; /* 기본 마진 제거 */
+}
+
+.areaBasic dd.grade {
+	font-weight: bold;
+	margin: -7px 5px 5px 32px; /* 기본 마진 제거 */
+}
+
+.areaBasic dd.theme {
+	font-weight: bold;
+	margin: -7px 5px 5px 32px; /* 기본 마진 제거 */
+}
+.areaBasic dd.hits {
+	font-weight: bold;
+	margin: -7px 5px 5px 20px; /* 기본 마진 제거 */
+}
+
+dl.likes{
+	margin:15px 0px 0px -45px;
+	border-top: 1px solid #DDD;
+	padding: 10px 10px 10px 0px;
+}
+
+dd.likes {
+	font-weight: bold;
+	margin: 0px 0px 0px 15px; /* 기본 마진 제거 */
+}
+
+.tabInfo {
+	clear: both;
+	position: relative;
+	width: 100%; /* 부모 요소의 100% 너비를 차지하도록 설정 */
+	padding: 70px 0 0px 0;
+	z-index: 5;
+	margin-top: 20px; /* 원하는 만큼의 상단 여백 설정 */
+}
+
+h3 {
+	border-bottom: 1px solid #000; /* 원하는 선의 두께, 스타일 및 색상으로 수정할 수 있습니다. */
+}
+
+.center-text {
+	text-align: center;
+}
+
+    .reviewInfo {
+        border: 1px solid #ccc; /* 테두리 스타일 및 색상 */
+        padding: 20px; /* 내부 여백 */
+        width: 100%; /* Div의 너비 */
+        height:400px;
+        margin: 0 auto; /* 가운데 정렬을 위한 외부 여백 */
+    }
+    
+        textarea {
+        width: 100%; /* 가로 크기를 100%로 설정하여 부모 요소의 너비에 맞게 늘어납니다. */
+        /* 다른 스타일 추가 가능 */
+    }
+    
+    section {
+        background-color: #f4f4f4; /* 배경색 */
+        padding: 10px; /* 안쪽 여백 */
+        margin-bottom: 10px; /* 아래쪽 마진 */
+        border-radius: 5px; /* 모서리 둥글게 */
+        height:100px;
+    }
+
+    /* 닉네임 스타일 */
+    .nickname {
+        font-weight: bold; /* 굵은 글꼴 */
+        color: #333; /* 글자 색상 */
+        margin-bottom:10px;
+    }
+
+    /* 댓글 내용 스타일 */
+    .comment {
+        color: #666; /* 글자 색상 */
+    }
+        #user1 {
+        width: 25px; /* 너비 */
+        height: 25px; /* 높이 */
+        margin-bottom:10px;
+    }
+    input[name="nickname"] {
+    border: none;
+    /* 다른 스타일을 추가할 수 있음 */
+}
+
+    .b-example-divider {
+        padding-top: 50px; /* 위쪽 여백 설정 */
+        padding-bottom: 50px; /* 아래쪽 여백 설정 */
+    }
+    
+        .nav-link:hover {
+        text-decoration: underline;
+    }
+
+/* main 이미지 */
+
+/* 테이블 스타일 */
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+/* visual */
+
+
+
+/* 폼 스타일(주의)*/
+
+
+    input[type="text"] {
+        padding: 10px;
+        width: 50%;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    input[type="submit"], input[type="reset"] {
+        color: white;
+        background-color: #4CAF50; /* 녹색 배경 */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049; /* 마우스를 올렸을 때 더 진한 녹색 */
+    }
+    input[type="submit"]:active, input[type="reset"]:active {
+        background-color: #397d3c; /* 클릭 시 더욱 진한 녹색 */
+    }
+    
+    .green-button {
+    padding: 10px;
+    width: 15%;
+    margin: 5px 0;
+    box-sizing: border-box;
+    color: white;
+    background-color: #4CAF50; /* 녹색 배경 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: #45a049; /* 마우스를 올렸을 때 더 진한 녹색 */
+}
+
+.green-button:active {
+    background-color: #397d3c; /* 클릭 시 더욱 진한 녹색 */
+}
+
+/* 폼 스타일(주의)*/
+
+/* footer */
+footer{
+    width: 100%;
+    padding: 100px 0px;
+    border-top: 1px solid #888;
+}
+footer .inner{
+    width: 1180px;
+    margin: 0px auto;
+}
+footer .inner .upper{
+    width: 100%;
+    border-bottom: 1px solid #777;
+    padding-bottom: 20px;
+}
+footer .inner .upper::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+footer .inner .upper h1{
+    float: left;
+    font:bold 24px/1 "arial";
+    color: #666;
+}
+footer .inner .upper ul{
+    float: right;
+}
+footer .inner .upper ul li{
+    float: left;
+    margin-left: 20px;
+}
+footer .inner .upper ul li a{
+    font:bold 14px/1 "arial";
+    color: #666;
+}
+footer .inner .lower{
+    width: 100%;
+    padding-top: 20px;
+}
+footer .inner .lower address{
+    width: 100%;
+    font: 12px/1.3 "arial";
+    color:#777;
+    margin-bottom: 20px;
+}
+footer .inner .lower p{
+    width: 100%;
+    font:12px/1 "arial";
+    color:#777;
+}
+
+.restAdd {
+    display: flex; /* 부모 요소를 플렉스 컨테이너로 설정하여 자식 요소들을 가로로 배치 */
+    flex-wrap: nowrap; /* 자식 요소들이 넘치는 경우 줄 바꿈을 하지 않도록 설정 */
+}
+
+.restAdd dt {
+    white-space: nowrap; /* dt 요소가 너무 길 경우 줄 바꿈을 하지 않도록 설정 */
+}
+

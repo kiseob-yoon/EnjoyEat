@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ks.sb_project.repository.CommentsMapper">
+	<select id="selectCount" resultType="Integer">
+		select count(*) from
+		comments
+	</select>
+	
+	<select id="average" resultType="Double">
+		SELECT COALESCE(ROUND(AVG(grade), 1), 0.0) FROM comments WHERE id = #{id};
+	</select>
+	
+	<select id="sum" resultType="Integer">
+		SELECT count(*) FROM comments where id =${id};
+	</select>
+
+	<select id="selectAll" resultType="com.ks.sb_project.dto.Comments">
+		select c.nickname, c.comment c.curTime, c.grade
+		from comments c
+		join store s on c.id = s.id
+		where c.id = #{id}
+	</select>
+
+
+	<select id="selectCommentsList" resultType="com.ks.sb_project.dto.Comments">
+		SELECT num, nickname, c.curTime, c.grade
+		comment, id
+		FROM comments
+		WHERE id = #{id}
+	</select>
+
+	<select id="selectCommentstById"
+		resultType="com.ks.sb_project.dto.Comments">
+    <![CDATA[
+        SELECT
+            num,
+           	nickname,
+            comment,
+            id,
+            curTime,
+            grade
+        FROM
+            comments
+        WHERE
+            num = #{num} and id = #{id}
+    ]]>
+	</select>
+
+	<insert id="insertComments" parameterType="com.ks.sb_project.dto.Comments">
+	<![CDATA[
+			INSERT INTO comments
+			(
+				nickname,
+				comment,
+				id,
+				curTime,
+				grade,
+			 	member_id
+			) 
+			VALUES 
+			(
+				#{nickname}, 
+				#{comment},
+				#{id},
+				NOW(),
+				#{grade},
+				#{member_id}
+			)
+		]]>
+	</insert>
+
+	<delete id="deleteComments" parameterType="int">
+	<![CDATA[
+		delete from comments where num = #{num}
+	
+	]]>
+	</delete>
+
+	<update id="updateComments" parameterType="com.ks.sb_project.dto.Comments">
+	<![CDATA[
+	update comments set 
+	comment=#{comment},
+	grade=#{grade}
+	where num = #{num} and id = #{id}
+	]]>
+
+	</update>
+	
+	
+	<select id="selectList" resultType="com.ks.sb_project.dto.Comments">
+    select * from comments order by num desc limit #{start}, #{listSize}
+  	</select>
+  	
+	<select id="paging" resultType="com.ks.sb_project.dto.Comments">
+    	SELECT c.nickname, c.comment, c.curTime, c.grade, c.num
+		FROM comments c
+		JOIN store s ON c.id = s.id
+		WHERE c.id = #{id}
+		ORDER BY num DESC
+		LIMIT #{start}, #{listSize}
+	</select>
+
+</mapper>
